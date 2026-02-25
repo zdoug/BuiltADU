@@ -38,6 +38,9 @@ h1, h2, h3, h4, h5, h6 {
 .justify-content-end {
     justify-content: end;
 }
+.justify-content-center {
+    justify-content: center;
+}
 .col-3 {
     flex: 0 0 25%;
 }
@@ -49,6 +52,32 @@ h1, h2, h3, h4, h5, h6 {
 }
 .col-12 {
     flex: 0 0 100%;
+}
+.btn {
+    padding: 2rem 4rem;
+    font-family: "Rubik", sans-serif;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+    border-radius: 2rem;
+    border: none;
+    &__primary {
+        background: $primary-color;
+        &:hover, &:focus {
+            background: #da560a;
+        }
+    }
+    &__secondary {
+        background: $secondary-color;
+        &:hover, &:focus {
+            background: #525151;
+        }
+    }
+}
+.align-items-center {
+    align-items: center;
 }
 
 h1 {
@@ -143,6 +172,30 @@ input[type="radio"] {
 }
 .mb-4 {
     margin-bottom: 4rem;
+}
+.mt-4 {
+    margin-top: 4rem;
+}
+.mt-6 {
+    margin-top: 6rem;
+}
+.mt-8 {
+    margin-top: 8rem;
+}
+.thank-you {
+    & p {
+        max-width: 80rem;
+        margin: 0 auto;
+    }
+}
+small {
+    display: block;
+    font-size: 1.4rem;
+    max-width: 80rem;
+    margin: 4rem auto 6rem;
+    color: $secondary-color;
+    text-align: center;
+
 }
 .local-result {
     padding: 1rem 3rem;

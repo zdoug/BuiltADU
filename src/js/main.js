@@ -28,11 +28,18 @@ function linearFeetTotal(val1 = 0, val2 = 0) {
     return 2 * (num1 + num2);
 }
 
+
 let squareFeetValues = document.querySelectorAll('[data-type="square-feet"]');
 let squareFeetResult = document.querySelector("#square-feet-value");
 let linearFeetResult = document.querySelector("#linear-feet-value");
-let valueLinear;
-let valueSquare;
+let sizeProperty = 0, valueLinear = 0, valueSquare = 0, incorporatedValue = 0, prepGradingValue = 0, waterLineLength = 0, gasLineLength = 0, sewerLineLength = 0, electricalLineLength = 0, foundationValue = 0, craneValue = 0, dayOfInstallation = 0, workRequired = 1;
+
+function fullPrice() {
+    let aproxPrice =  incorporatedValue + prepGradingValue + waterLineLength + gasLineLength +  sewerLineLength + electricalLineLength + foundationValue + craneValue + dayOfInstallation + workRequired;
+    let aproxPriceValue = document.querySelector("#aprox-price");
+    aproxPriceValue.textContent = aproxPrice.toLocaleString('en-US', { minimumFractionDigits: 2 });
+}
+
 
 // Insert values on output element and populate vars 'valueLinear' and 'valueSquare'
 for (let j = 0; j < squareFeetValues.length; j++) {
@@ -45,13 +52,15 @@ for (let j = 0; j < squareFeetValues.length; j++) {
         linearFeetResult.innerText = linearFeet;
         valueLinear = linearFeet;
         valueSquare = valueSquareFeet;
+        dayOfInstallation = 10 * valueSquareFeet;
+        workRequired = 45 * valueSquareFeet;
+        fullPrice();
     });
 }
 
 // Incorporated Value
 let incorporatedElements = document.querySelectorAll('[data-type="incorporated"]');
 for(let k = 0; k < incorporatedElements.length; k++) {
-    let incorporatedValue;
     incorporatedElements[k].addEventListener("change", (event) => {
         let resultIncorporated = event.target.value;
         // console.log(resultIncorporated);
@@ -65,14 +74,13 @@ for(let k = 0; k < incorporatedElements.length; k++) {
             default:
                 break;
         }
-        // console.log(incorporatedValue);
+        fullPrice();
     });
 }
 
 // Site Preparation and Grading
 let prepGradingElements = document.querySelectorAll('[data-type="prep-grading"]');
 for(let k = 0; k < prepGradingElements.length; k++) {
-    let prepGradingValue;
     prepGradingElements[k].addEventListener("change", (event) => {
         let resultPrepGrading = event.target.value;
         // console.log(resultIncorporated);
@@ -89,16 +97,37 @@ for(let k = 0; k < prepGradingElements.length; k++) {
             default:
                 break;
         }
-        // console.log(prepGradingValue);
+        fullPrice();
     });
 }
 
-// Here insert Length of Utilities code
+// Length Utilities
+let lengthUtilitiesElements = document.querySelectorAll('[data-type="length-utilities"]');
+for(let l = 0; l < lengthUtilitiesElements.length; l++) {
+    lengthUtilitiesElements[l].addEventListener("input", (event) => {
+        switch (lengthUtilitiesElements[l].id) {
+            case "water-line-length-input":
+                waterLineLength = lengthUtilitiesElements[l].value * 110;
+                break;
+            case "gas-line-length-input":
+                gasLineLength = lengthUtilitiesElements[l].value * 70;
+                break;
+            case "sewer-line-length-input":
+                sewerLineLength = lengthUtilitiesElements[l].value * 70;
+                break;
+            case "electrical-line-length-input":
+                electricalLineLength = lengthUtilitiesElements[l].value * 70;
+                break;        
+            default:
+                break;
+        }
+        fullPrice();
+    });
+}
 
 // Foundation Preference
 let foundationPreferenceElements = document.querySelectorAll('[data-type="foundation-preference"]');
 for(let l = 0; l < foundationPreferenceElements.length; l++) {
-    let foundationValue;
     foundationPreferenceElements[l].addEventListener("change", (event) => {
         let resultFoundationPreference = event.target.value;
         // console.log(resultIncorporated);
@@ -112,14 +141,13 @@ for(let l = 0; l < foundationPreferenceElements.length; l++) {
             default:
                 break;
         }
-        // console.log(foundationValue);
+        fullPrice();
     });
 }
 
 // Crane required
 let cranePreferenceElements = document.querySelectorAll('[data-type="crane-preference"]');
 for(let l = 0; l < cranePreferenceElements.length; l++) {
-    let craneValue;
     cranePreferenceElements[l].addEventListener("change", (event) => {
         let resultcranePreference = event.target.value;
         // console.log(resultIncorporated);
@@ -133,9 +161,11 @@ for(let l = 0; l < cranePreferenceElements.length; l++) {
             default:
                 break;
         }
-        console.log(craneValue);
+        fullPrice();
     });
 
 }
+
+
 
 

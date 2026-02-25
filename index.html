@@ -70,7 +70,7 @@
             <legend>Site Preparation and Grading</legend>
             <label for="minimal"><input type="radio" name="site-preparation" id="minimal" data-type="prep-grading" value="Minimal">Minimal Site Prep and Grading</label>
             <label for="moderate"><input type="radio" name="site-preparation" id="moderate" data-type="prep-grading" value="Moderate" checked>Moderate Site Prep and Grading</label>
-            <label for="heavy"><input type="radio" name="site-preparation" id="heavy" data-type="prep-grading" value="Heavy">Heavy Site Prep and Grading</label>
+            <label for="heavy"><input type="radio" name="site-preparation" id="heavy" data-type="prep-grading"  value="Heavy">Heavy Site Prep and Grading</label>
           </fieldset>
         </div>        
       </div>
@@ -82,22 +82,22 @@
               <div class="input-range">
                 <label for="water-line-length-input">Water Line Length</label>
                 <output id="water-line-length-output"></output>
-                <input type="range" id="water-line-length-input" value="0000" min="0" max="400" step="10">
+                <input type="range" id="water-line-length-input" data-type="length-utilities" value="0000" min="0" max="400" step="10">
               </div>
               <div class="input-range">
                 <label for="gas-line-length-input">Gas Line Length</label>
                 <output id="gas-line-length-output"></output>
-                <input type="range" id="gas-line-length-input" value="0000" min="0" max="400" step="10">
+                <input type="range" id="gas-line-length-input" data-type="length-utilities" value="0000" min="0" max="400" step="10">
               </div>
               <div class="input-range">
                 <label for="sewer-line-length-input">Sewer Line Length</label>
                 <output id="sewer-line-length-output"></output>
-                <input type="range" id="sewer-line-length-input" value="0000" min="0" max="400" step="10">
+                <input type="range" id="sewer-line-length-input" data-type="length-utilities" value="0000" min="0" max="400" step="10">
               </div>
               <div class="input-range">
                 <label for="electrical-line-length-input">Electrical Line Length</label>
                 <output id="electrical-line-length-output"></output>
-                <input type="range" id="electrical-line-length-input" value="0000" min="0" max="400" step="10">
+                <input type="range" id="electrical-line-length-input" data-type="length-utilities" value="0000" min="0" max="400" step="10">
               </div>
             </div>
             
@@ -130,19 +130,21 @@
         <div class="col-4">
           <div class="local-result local-result__end">
               <strong>Aprox. Price</strong>
-              <span>$ 0,000.00</span>
+              <span>$ <span id="aprox-price">0,000.00</span></span>
             </div>
         </div>
       </div>
     </form>
-    <div class="container mb-6">
+    <div class="container mt-8 thank-you">
       <div class="col-12">
         <p>Thank you for using our Cost Calculator to get the initial quote for your project, you can now send it to us directly via email, or give us a <strong>direct call</strong> to setup a site visit!</p>
       </div>
     </div>
-    <div class="container">
-      <div class="col-12 align-items-center">
+    <div class="container justify-content-center mt-6">
+      <div class="col-6">
         <a href="" class="btn btn__secondary">Send results via E-mail</a>
+      </div>
+      <div class="col-6">
         <a href="" class="btn btn__primary">Call us now!</a>
       </div>
     </div>
