@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+    <title>built-adu</title>
+  </head>
+  <body>
+    <div class="container flex-direction-column">
+      <div class="col-12">
+        <h1>Home Installation Cost Calculator</h1>
+        <p>Welcome to the BuiltADU Home Installation Cost Calculator. This tool is designed to help you estimate the funds required for your project.</p>
+        <p>All values provided are approximate and for budgeting purposes only. A final quote will be issued after an in-person site visit.</p>
+      </div>
+    </div>
+    <form action="">
+      <div class="container mb-2">
+        <div class="col-4">
+          <div class="input-range">
+            <label for="size-property-input">Size of your property</label>
+            <output id="size-property-output"></output>
+            <input type="range" id="size-property-input" value="0000" min="0" max="10000" step="50">
+          </div>
+        </div>
+      </div>
+      <div class="container mb-2">
+        <div class="col-4">
+          <div class="input-range">
+            <label for="length-home-input">Length of Home</label>
+            <output id="length-home-output"></output>
+            <input type="range" id="length-home-input" data-type="square-feet" value="0" min="0" max="100" step="1">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="input-range">
+            <label for="width-home-input">Width of Home</label>
+            <output id="width-home-output"></output>
+            <input type="range" id="width-home-input" data-type="square-feet" value="0" min="0" max="100" step="1">
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="local-result">
+            <strong>Square Feet</strong>
+            <span><span id="square-feet-value">0</span> sq ft</span>
+          </div>
+        </div>
+      </div>
+      <div class="container mb-2">
+        <div class="col-8">
+          <fieldset>
+            <legend>Is your property Incorporated or Unincorporated Land (Permit Question)?</legend>
+            <label for="incorporated"><input type="radio" name="incorporated" value="Incorporated" id="incorporated" data-type="incorporated" checked>Incorporated</label>
+              <label for="unincorporated"><input type="radio" name="incorporated" value="Unincorporated" id="unincorporated" data-type="incorporated" >Unincorporated</label>
+          </fieldset>
+        </div>
+        <div class="col-4">
+          <div class="local-result">
+            <strong>Linear Feet</strong>
+            <span><span id="linear-feet-value">0</span> lin. ft</span>
+          </div>
+        </div>
+      </div>
+      <div class="container mb-2">
+        <div class="col-12">
+          <fieldset>
+            <legend>Site Preparation and Grading</legend>
+            <label for="minimal"><input type="radio" name="site-preparation" id="minimal" data-type="prep-grading" value="Minimal">Minimal Site Prep and Grading</label>
+            <label for="moderate"><input type="radio" name="site-preparation" id="moderate" data-type="prep-grading" value="Moderate" checked>Moderate Site Prep and Grading</label>
+            <label for="heavy"><input type="radio" name="site-preparation" id="heavy" data-type="prep-grading" value="Heavy">Heavy Site Prep and Grading</label>
+          </fieldset>
+        </div>        
+      </div>
+      <div class="container mb-2">
+       <div class="col-12">
+          <fieldset>
+            <legend>Length of Utilities from the origin point to your home</legend>
+            <div class="input-container">
+              <div class="input-range">
+                <label for="water-line-length-input">Water Line Length</label>
+                <output id="water-line-length-output"></output>
+                <input type="range" id="water-line-length-input" value="0000" min="0" max="400" step="10">
+              </div>
+              <div class="input-range">
+                <label for="gas-line-length-input">Gas Line Length</label>
+                <output id="gas-line-length-output"></output>
+                <input type="range" id="gas-line-length-input" value="0000" min="0" max="400" step="10">
+              </div>
+              <div class="input-range">
+                <label for="sewer-line-length-input">Sewer Line Length</label>
+                <output id="sewer-line-length-output"></output>
+                <input type="range" id="sewer-line-length-input" value="0000" min="0" max="400" step="10">
+              </div>
+              <div class="input-range">
+                <label for="electrical-line-length-input">Electrical Line Length</label>
+                <output id="electrical-line-length-output"></output>
+                <input type="range" id="electrical-line-length-input" value="0000" min="0" max="400" step="10">
+              </div>
+            </div>
+            
+        </fieldset>
+       </div>
+      </div>
+      <div class="container mb-2">
+        <div class="col-12">
+          <fieldset>
+            <legend>Foundation Preference:</legend>
+            <div>
+              <label for="above-grade"><input type="radio" name="foundation-preference" id="above-grade" data-type="foundation-preference" value="Above Grade">Above Grade without excavation. Raised profile like a Mobile Home in a Mobile Home Park.</label>
+            </div>
+            <div>
+              <label for="permanent-foundation"><input type="radio" name="foundation-preference" data-type="foundation-preference" id="permanent-foundation" value="Permanent" checked>Permanent Foundation below grade. Low profile like a single-family home.</label>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="container mb-2">
+        <div class="col-12">
+          <fieldset>
+            <legend>Crane required for the day?</legend>
+            <label for="crane-yes"><input type="radio" id="crane-yes" value="Yes" name="crane-option" data-type="crane-preference" checked>Yes</label>
+            <label for="crane-no"><input type="radio" id="crane-no" value="No" name="crane-option" data-type="crane-preference">No</label>
+          </fieldset>
+        </div>
+      </div>
+      <div class="container mb-2 justify-content-end">
+        <div class="col-4">
+          <div class="local-result local-result__end">
+              <strong>Aprox. Price</strong>
+              <span>$ 0,000.00</span>
+            </div>
+        </div>
+      </div>
+    </form>
+    <div class="container mb-6">
+      <div class="col-12">
+        <p>Thank you for using our Cost Calculator to get the initial quote for your project, you can now send it to us directly via email, or give us a <strong>direct call</strong> to setup a site visit!</p>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-12 align-items-center">
+        <a href="" class="btn btn__secondary">Send results via E-mail</a>
+        <a href="" class="btn btn__primary">Call us now!</a>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-12">
+        <small>Disclaimer: Prices shown here are preliminary estimates only and are not final or binding. A detailed quote will be provided after an in-person site visit.</small>
+      </div>
+    </div>
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
