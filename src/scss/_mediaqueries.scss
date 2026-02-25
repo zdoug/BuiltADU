@@ -1,3 +1,40 @@
 @media screen and (max-width: 991px) {
-    
+    .container {
+        flex-direction: column;
+        row-gap: 2rem;
+        &.thank-you {
+            & + .container {
+                & div[class^="col-"] {
+                    text-align: center;
+                }
+            }
+        }
+    }
+    .col-4 {
+        flex: 0 0 100%!important;
+    }
+    .btn {
+        font-size: 2rem!important;
+    }
+    output {
+        width: 100%!important;
+    }
+    .input-range input[type=range] {
+        width: calc(100% - 20px)!important;
+    }
+    fieldset {
+        display: flex;
+        flex-direction: column;
+        row-gap: .5rem;
+        & legend {
+            margin-bottom: 1.75rem;
+        }
+        & label {
+            margin-left: 0!important;
+        }
+    }
+    .input-container {
+        flex-direction: column;
+        row-gap: 2rem;
+    }
 }
