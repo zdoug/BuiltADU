@@ -166,6 +166,31 @@ for(let l = 0; l < cranePreferenceElements.length; l++) {
 
 }
 
+// Create and remove tooltips
+let tooltipElements = document.querySelectorAll(".tooltip");
+for (let p = 0; p < tooltipElements.length; p++) {
+    tooltipElements[p].addEventListener("mouseenter", (e) => {
+        createTooltipElement(tooltipElements[p]);
+    });
+    tooltipElements[p].addEventListener("mouseleave", (e) => {
+        removeTooltipElement(tooltipElements[p]);
+    });
+}
+
+function createTooltipElement(elementReference) {
+    let tooltipText = document.createElement("span");
+    tooltipText.setAttribute("class", "tooltip-text");
+    let textData = elementReference.dataset.text;
+    tooltipText.textContent = textData;
+    elementReference.appendChild(tooltipText);
+}
+function removeTooltipElement(elementReference) {
+    let childElement = elementReference.querySelector(".tooltip-text");
+    if(childElement) {
+        childElement.remove();
+    }
+}
+
 
 
 
