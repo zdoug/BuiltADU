@@ -12,6 +12,10 @@
     }
     .col-4 {
         flex: 0 0 100%!important;
+        width: 100%;
+    }
+    .col-12 {
+        width: 100%;
     }
     .btn {
         font-size: 2rem!important;
@@ -21,6 +25,12 @@
     }
     .input-range input[type=range] {
         width: calc(100% - 20px)!important;
+        &#size-property-input + .ft-value {
+            right: 20px!important;
+        }
+        & + .ft-value {
+            right: 20px;
+        }
     }
     fieldset {
         display: flex;
@@ -36,5 +46,11 @@
     .input-container {
         flex-direction: column;
         row-gap: 2rem;
+    }
+    .tooltip .tooltip-text {
+        width: 110px!important;
+    }
+    .local-result span {
+        font-size: 3rem!important;
     }
 }
