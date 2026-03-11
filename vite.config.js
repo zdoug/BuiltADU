@@ -18,6 +18,8 @@ export default defineConfig({
     }
   },
   build: {
+    // Define o limite de tamanho para "inline" como 0
+    assetsInlineLimit: 0,
     rollupOptions: {
       output: {
         // Organiza os arquivos JS

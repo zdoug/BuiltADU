@@ -138,6 +138,9 @@ input[type="number"], output {
 .tooltip {
     display: inline-block;
     margin-left: .5rem;
+    width: 7px;
+    height: 7px;
+    background: url('../img/icon-info.png') no-repeat center;
     font-weight: 400;
     position: relative;
     & .tooltip-text {
